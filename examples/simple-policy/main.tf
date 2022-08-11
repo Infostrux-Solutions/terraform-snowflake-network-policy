@@ -1,5 +1,19 @@
+terraform {
+  required_version = ">= 0.13.1"
+  required_providers {
+    snowflake = {
+      source  = "Snowflake-Labs/snowflake"
+      version = ">=0.40.0"
+    }
+  }
+}
+
+provider "snowflake" {
+  role = "SECURITYADMIN"
+}
+
 module "network_policy" {
-  source = "../../../terraform-sf-network-policy"
+  source = "../../"
 
   name = "simple-policy"
 

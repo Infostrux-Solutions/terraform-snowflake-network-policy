@@ -1,4 +1,4 @@
-resource "snowflake_network_policy" "policy" {
+resource "snowflake_network_policy" "network_policy" {
   name    = var.name
   comment = var.comment
 
@@ -9,7 +9,7 @@ resource "snowflake_network_policy" "policy" {
 resource "snowflake_network_policy_attachment" "attach" {
   count = var.attach_policy ? 1 : 0
 
-  network_policy_name = snowflake_network_policy.policy.name
+  network_policy_name = snowflake_network_policy.network_policy.name
   set_for_account     = var.set_for_account
   users               = var.users_list
 }

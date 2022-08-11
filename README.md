@@ -9,13 +9,13 @@ Terraform module which creates network policy resources on Snowflake.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_snowflake"></a> [snowflake](#requirement\_snowflake) | >=0.31.0 |
+| <a name="requirement_snowflake"></a> [snowflake](#requirement\_snowflake) | >=0.40.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_snowflake"></a> [snowflake](#provider\_snowflake) | 0.34.0 |
+| <a name="provider_snowflake"></a> [snowflake](#provider\_snowflake) | 0.40.0 |
 
 ## Modules
 
@@ -25,7 +25,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [snowflake_network_policy.policy](https://registry.terraform.io/providers/Snowflake-Labs/snowflake/latest/docs/resources/network_policy) | resource |
+| [snowflake_network_policy.network_policy](https://registry.terraform.io/providers/Snowflake-Labs/snowflake/latest/docs/resources/network_policy) | resource |
 | [snowflake_network_policy_attachment.attach](https://registry.terraform.io/providers/Snowflake-Labs/snowflake/latest/docs/resources/network_policy_attachment) | resource |
 
 ## Inputs
@@ -50,4 +50,4 @@ No modules.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Authors
 
-Module is maintained by [Matt van Zanten](https://github.com/orgs/Infostrux-Solutions/people/mvanzanten) with help from [these awesome contributors](https://github.com/Infostrux-Solutions/terraform-sf-network-policy/graphs/contributors).
+Module is maintained by [Infostrux Solutions](mailto:opensource@infostrux.com)
