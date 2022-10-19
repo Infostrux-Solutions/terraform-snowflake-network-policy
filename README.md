@@ -2,8 +2,37 @@
 
 Terraform module which creates network policy resources on Snowflake.
 
-## Examples
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Usage
+
+### Simple usage:
+```hcl
+module "network_policy" {
+  source  = "Infostrux-Solutions/network-policy/snowflake"
+
+  name = "simple-policy"
+
+  allowed_ips = ["172.218.20.30/32"]
+}
+```
+
+### Full Usage:
+```hcl
+module "network_policy" {
+  source  = "Infostrux-Solutions/network-policy/snowflake"
+
+  name = "advanced-policy"
+
+  allowed_ips = ["172.218.20.30/32"]
+  blocked_ips = ["124.74.33.12/32"]
+
+  attach_policy   = true
+  set_for_account = false
+  users_list      = ["attach-policy-to-me"]
+}
+
+```
+
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -15,7 +44,7 @@ Terraform module which creates network policy resources on Snowflake.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_snowflake"></a> [snowflake](#provider\_snowflake) | 0.40.0 |
+| <a name="provider_snowflake"></a> [snowflake](#provider\_snowflake) | >=0.40.0 |
 
 ## Modules
 
@@ -47,7 +76,10 @@ No modules.
 | <a name="output_allowed_ips"></a> [allowed\_ips](#output\_allowed\_ips) | Allowed IP list |
 | <a name="output_blocked_ips"></a> [blocked\_ips](#output\_blocked\_ips) | Blocked IPs list |
 | <a name="output_users_list"></a> [users\_list](#output\_users\_list) | Users list |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Authors
+<!-- END_TF_DOCS -->
 
-Module is maintained by [Infostrux Solutions](mailto:opensource@infostrux.com)
+## Authors
+Module is maintained by [Infostrux Solutions](mailto:opensource@infostrux.com) with help from [these awesome contributors](https://github.com/Infostrux-Solutions/terraform-snowflake-network-policy/graphs/contributors).
+
+## License
+Apache 2 Licensed. See [LICENSE](https://github.com/Infostrux-Solutions/terraform-snowflake-network-policy/blob/main/LICENSE) for full details.
